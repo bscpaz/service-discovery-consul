@@ -12,7 +12,7 @@ docker-compose up -d
 ```
 #### Getting into Consul server
 ```console
-docker exec -it consul01 sh
+docker exec -it consulserver01 sh
 ```
 ##### Creating config folders
 ```console
