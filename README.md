@@ -5,8 +5,7 @@
 ### Technologies:
 * Consult (https://www.consul.io)
 
-### How to get stated
-#### Creating a Consul server
+### Creating a Consul server
 ```console
 docker-compose up -d
 ```
@@ -47,8 +46,7 @@ consul agent -server -bootstrap-expect=3 -node=consulserver01 -bind=<IP> -data-d
 consul join <IP of some other consul server>
 ```
 
-### How to get stated
-#### Creating a Consul client
+### Creating a Consul client
 ```console
 docker exec -it consulclient01 sh
 ```
@@ -58,6 +56,10 @@ mkdir /var/lib/consul
 ```
 ```console
 mkdir /etc/consul.d
+```
+###### Installing 'dig' command for check DNS informations
+```console
+apk -U add bind-tools
 ```
 ###### Initializing Consul client
 * Checking the current IP
