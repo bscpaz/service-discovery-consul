@@ -10,30 +10,30 @@
 ```console
 docker-compose up -d
 ```
-#### Stopping a Consul server
+##### Stopping a Consul server
 ```console
 docker-compose stop
 ```
-#### Removing a Consul server
+##### Removing a Consul server
 ```console
 docker-compose down
 ```
-#### Getting into Consul server
+##### Getting into Consul server
 ```console
 docker exec -it consulserver01 sh
 ```
-##### Creating config folders
+###### Creating config folders
 ```console
 mkdir /var/lib/consul
 ```
 ```console
 mkdir /etc/consul.d
 ```
-##### Installing 'dig' command for check DNS informations
+###### Installing 'dig' command for check DNS informations
 ```console
 apk -U add bind-tools
 ```
-##### Initializing Consul server
+###### Initializing Consul server
 * Checking the current IP
 ```console
 ifconfig
@@ -47,20 +47,50 @@ consul agent -server -bootstrap-expect=3 -node=consulserver01 -bind=<IP> -data-d
 consul join <IP of some other consul server>
 ```
 
+### How to get stated
+#### Creating a Consul client
+```console
+docker exec -it consulclient01 sh
+```
+###### Creating config folders
+```console
+mkdir /var/lib/consul
+```
+```console
+mkdir /etc/consul.d
+```
+###### Initializing Consul client
+* Checking the current IP
+```console
+ifconfig
+```
+* Starting a consul server (without config files)
+```console
+consul agent -bind=<IP> -data-dir=/var/lib/consul -config-dir=/etc/consul.d
+```
+* Registring to a cluster server
+```console
+consul join <IP of some other consul server>
+```
+
 #### Checking Informations
-##### Checking Consul's members
+###### Checking Consul's members
 ```console
 consul members
 ```
-##### Checking Consul's catalog
+###### Checking Consul's catalog
 ```console
 curl localhost:8500/v1/catalog/nodes
 ```
-##### Showing all IPs members that are registred into Consul
+###### Showing all IPs members that are registred into Consul
 ```console
 dig @localhost -p 8600
 ```
-##### Show all IPs of a specific name of DNS
+###### Show all IPs of a specific name of DNS
 ```console
 dig @localhost -p 8600 consul01.node.consul
+```
+###### Reload configs
+```console
+consul reload
 ```
