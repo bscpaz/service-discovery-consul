@@ -90,7 +90,7 @@ dig @localhost -p 8600
 ```
 ###### Show all IPs of a specific name of DNS
 ```console
-dig @localhost -p 8600 nginx.node.consul
+dig @localhost -p 8600 nginx.service.consul
 ```
 ###### Reload configs
 ```console
