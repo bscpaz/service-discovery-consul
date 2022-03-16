@@ -32,7 +32,7 @@ ifconfig
 ```
 * Starting a consul server (without config files)
 ```console
-consul agent -server -bootstrap-expect=3 -node=consulserver01 bind=<IP> -data-dir=/var/lib/consul -config-dir=/etc/consul.d
+consul agent -server -bootstrap-expect=3 -node=consulserver01 -bind=<IP> -data-dir=/var/lib/consul -config-dir=/etc/consul.d
 ```
 
 #### Checking Informations
