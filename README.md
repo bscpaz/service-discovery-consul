@@ -75,7 +75,7 @@ consul agent -bind=<IP> -data-dir=/var/lib/consul -config-dir=/etc/consul.d
 consul join <IP of some other consul server>
 ```
 
-#### Checking Informations
+### Checking Informations
 ###### Checking Consul's members
 ```console
 consul members
