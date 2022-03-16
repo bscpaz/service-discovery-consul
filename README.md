@@ -80,9 +80,13 @@ consul join <IP of some other consul server>
 ```console
 consul members
 ```
-###### Checking Consul's catalog
+###### Checking Consul's node catalog
 ```console
 curl localhost:8500/v1/catalog/nodes
+```
+###### Checking Consul's services catalog
+```console
+curl localhost:8500/v1/catalog/services
 ```
 ###### Showing all IPs members that are registred into Consul
 ```console
