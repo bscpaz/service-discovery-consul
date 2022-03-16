@@ -96,6 +96,9 @@ dig @localhost -p 8600
 ```console
 dig @localhost -p 8600 nginx.service.consul
 ```
+```console
+consul catalog nodes -service nginx
+```
 ###### Reload configs
 ```console
 consul reload
