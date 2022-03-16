@@ -10,6 +10,14 @@
 ```console
 docker-compose up -d
 ```
+#### Stopping a Consul server
+```console
+docker-compose stop
+```
+#### Removing a Consul server
+```console
+docker-compose down
+```
 #### Getting into Consul server
 ```console
 docker exec -it consulserver01 sh
