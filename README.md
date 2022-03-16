@@ -80,11 +80,17 @@ consul join <IP of some other consul server>
 ```console
 consul members
 ```
-###### Checking Consul's node catalog
+###### Checking nodes catalog
+```console
+consul catalog nodes -detailed
+```
 ```console
 curl localhost:8500/v1/catalog/nodes
 ```
-###### Checking Consul's services catalog
+###### Checking services catalog
+```console
+consul catalog nodes -service nginx
+```
 ```console
 curl localhost:8500/v1/catalog/services
 ```
@@ -95,9 +101,6 @@ dig @localhost -p 8600
 ###### Show all IPs of a specific name of DNS
 ```console
 dig @localhost -p 8600 nginx.service.consul
-```
-```console
-consul catalog nodes -service nginx
 ```
 ###### Reload configs
 ```console
