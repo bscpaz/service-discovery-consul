@@ -42,6 +42,10 @@ ifconfig
 ```console
 consul agent -server -bootstrap-expect=3 -node=consulserver01 -bind=<IP> -data-dir=/var/lib/consul -config-dir=/etc/consul.d
 ```
+* Creating a cluster
+```console
+consul join <IP of some other consul server>
+```
 
 #### Checking Informations
 ##### Checking Consul's members
