@@ -115,13 +115,56 @@ nginx.service.consul.   0       IN      A       172.21.0.6
 ```console
 consul reload
 ```
-### Intalling and stating nginx on client
+### Installing and starting nginx on client
+##### Installing softwares
 ```console
 apk add nginx
 ```
 ```console
+apk add vim
+```
+##### Initial configurations
+```console
 mkdir /run/nginx
 ```
 ```console
+mkdir /usr/share/nginx/html -p
+```
+##### Changing nginx 'default.conf' file to not return 404
+```console
+vim /etc/nginx/conf.d/default.conf
+```
+###### Remove the following:
+```console
+# Everything is a 404
+location / {
+  return 404;
+}
+```
+###### Add the following:
+```console
+ root /usr/share/nginx/html;
+```
+###### Create some html page to not return 404:
+```console
+ vim /usr/share/nginx/html/index.html
+```
+```html
+<html>
+  <body>
+    Hello Bruno Costa Paz!
+  </body>    
+</html>   
+```
+##### Starting nginx:
+```console
 nginx
+```
+###### If alread started, you can reload it:
+```console
+nginx -s reload
+```
+##### Checking the execution of nginx
+```console
+curl localhost
 ```
