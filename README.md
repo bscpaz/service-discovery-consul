@@ -115,3 +115,7 @@ nginx.service.consul.   0       IN      A       172.21.0.6
 ```console
 consul reload
 ```
+### Intalling nginx
+```console
+apk add nginx
+```
