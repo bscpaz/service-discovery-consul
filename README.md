@@ -143,11 +143,11 @@ location / {
 ```
 ###### Add the following:
 ```console
- root /usr/share/nginx/html;
+root /usr/share/nginx/html;
 ```
 ###### Create some html page to not return 404:
 ```console
- vim /usr/share/nginx/html/index.html
+vim /usr/share/nginx/html/index.html
 ```
 ```html
 <html>
