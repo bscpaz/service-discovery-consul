@@ -99,8 +99,15 @@ curl localhost:8500/v1/catalog/services
 dig @localhost -p 8600
 ```
 ###### Show all IPs of a specific name of DNS
+Run in client instance
 ```console
 dig @localhost -p 8600 nginx.service.consul
+```
+The result will be something like this (two IPs for nginx service)
+```console
+;; ANSWER SECTION:
+nginx.service.consul.   0       IN      A       172.21.0.5
+nginx.service.consul.   0       IN      A       172.21.0.6
 ```
 ###### Reload configs
 ```console
