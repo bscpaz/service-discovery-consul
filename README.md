@@ -68,7 +68,7 @@ ifconfig
 ```
 * Starting a consul server (without config files)
 ```console
-consul agent -bind=<IP> -data-dir=/var/lib/consul -config-dir=/etc/consul.d
+consul agent -bind=<IP> -data-dir=/var/lib/consul -config-dir=/etc/consul.d -retry-join=<IP consul server #1> -retry-join=<IP consul server #2>
 ```
 * Registring to a cluster server
 ```console
