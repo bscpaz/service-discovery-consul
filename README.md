@@ -4,6 +4,7 @@
 
 ### Technologies:
 * Consult (https://www.consul.io)
+* nginx (in clients)
 
 ### Creating a Consul server
 ```console
