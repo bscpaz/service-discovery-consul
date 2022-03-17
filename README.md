@@ -120,5 +120,8 @@ consul reload
 apk add nginx
 ```
 ```console
+mkdir /run/nginx
+```
+```console
 nginx
 ```
