@@ -38,6 +38,7 @@ apk -U add bind-tools
 ifconfig
 ```
 * Starting a consul server (without config files)
+* 'bootstrap-expect' means the number of Consul server will be running.
 ```console
 consul agent -server -bootstrap-expect=3 -node=consulserver01 -bind=<IP> -data-dir=/var/lib/consul -config-dir=/etc/consul.d -retry-join=<IP consul server #1> -retry-join=<IP consul server #2>
 ```
