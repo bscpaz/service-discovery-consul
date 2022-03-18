@@ -45,13 +45,16 @@ consul agent -server -bootstrap-expect=3 -node=consulserver01 -bind=<IP> -data-d
 ```
 * Starting a consul server (with a config file)
 ```console
-consul agent -node=consulserver01 -config-dir=/etc/consul.d
+consul agent -config-dir=/etc/consul.d
 ```
 * Creating a cluster
 ```console
 consul join <IP of some other consul server>
 ```
-
+* Creating a encrypt key
+```console
+consul keygen
+```
 ### Creating a Consul client
 ```console
 docker exec -it consulclient01 sh
