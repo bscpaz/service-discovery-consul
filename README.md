@@ -45,7 +45,7 @@ consul agent -server -bootstrap-expect=3 -node=consulserver01 -bind=<IP> -data-d
 ```
 * Starting a consul server (with a config file)
 ```console
-consul agent -node=consulserver01 -config-dir=/etc/consul.d
+consul agent -config-dir=/etc/consul.d
 ```
 * Creating a cluster
 ```console
