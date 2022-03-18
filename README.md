@@ -43,6 +43,10 @@ ifconfig
 ```console
 consul agent -server -bootstrap-expect=3 -node=consulserver01 -bind=<IP> -data-dir=/var/lib/consul -config-dir=/etc/consul.d -retry-join=<IP consul server #1> -retry-join=<IP consul server #2>
 ```
+* Starting a consul server (with a config file)
+```console
+consul agent -node=consulserver01 -config-dir=/etc/consul.d
+```
 * Creating a cluster
 ```console
 consul join <IP of some other consul server>
