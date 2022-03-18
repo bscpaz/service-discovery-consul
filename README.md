@@ -51,7 +51,10 @@ consul agent -config-dir=/etc/consul.d
 ```console
 consul join <IP of some other consul server>
 ```
-
+* Creating a encrypt key
+```console
+consul keygen
+```
 ### Creating a Consul client
 ```console
 docker exec -it consulclient01 sh
